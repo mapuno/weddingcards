@@ -64,8 +64,8 @@ async function loadPrompts() {
           onchange="showPreview(this, ${index})"
         />
 
-        <button onclick="triggerCamera(${index})">📸 Take Photo</button>
-        <button onclick="triggerUpload(${index})">🖼 Upload Photo</button>
+        <button onclick="triggerCamera(${index})"> Take Photo</button>
+        <button onclick="triggerUpload(${index})"> Upload Photo</button>
           
         <br>
         <img id="preview${index}" class="image-preview" style="max-width: 100%; max-height: 200px; display: none; margin-top: 10px;" />
