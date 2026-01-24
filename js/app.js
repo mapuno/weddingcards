@@ -125,7 +125,6 @@ async function uploadFile(index) {
   const submitButton = document.getElementById(`submitButton${index}`);
   const userName = document.getElementById("nameInput").value
   const actions = document.getElementById(`actions${index}`);
-  const imagePreview = document.getElementById(`preview${index}`);
 
   let file = fileInputUpload.files[0] || fileInputCamera.files[0];
   if (!file) return alert("Please choose a photo.");
@@ -159,7 +158,6 @@ async function uploadFile(index) {
   actions.style.display = "none";
   fileInputUpload.value = "";
   fileInputCamera.value = "";
-  imagePreview.style.display = "none";
 }
 
 function clearPhoto(index) {
