@@ -20,9 +20,10 @@
 
     html, body {
       height: 100%;
-      font-family: 'Jost', sans-serif;
+      font-family: 'Belanosima', sans-serif;
     }
 
+    
     .page {
       min-height: 100dvh;
       display: flex;
@@ -46,14 +47,15 @@
 
     /* ── Title ── */
     .title-block {
-      position: relative;
-      z-index: 1;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       text-align: center;
       margin-top: 2.8rem;
     }
 
     .title-block h1 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Belanosima', serif;
       font-size: clamp(2.4rem, 9vw, 4rem);
       font-weight: 600;
       color: var(--text-cream);
@@ -83,7 +85,7 @@
       border: 1px solid rgba(255,255,255,0.12);
       background-color: var(--brown);
       color: var(--text-cream);
-      font-family: 'Jost', sans-serif;
+      font-family: 'Belanosima', sans-serif;
       font-size: 1rem;
       font-weight: 400;
       letter-spacing: 0.1em;
