@@ -10,15 +10,18 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --brown-dark:  #3b2314;
-      --brown-mid:   #5c3520;
-      --text-light:  #f5ede4;
+      --brown:  #8f5a3a;
       --text-cream:  #e8d5c0;
+    }
+
+    @font-face {
+      font-family: 'Berlin Sans FB Demi';
+      src: url('BRLNSDB.TTF') format('truetype');
     }
 
     html, body {
       min-height: 100%;
-      font-family: 'Jost', sans-serif;
+      font-family: 'Berlin Sans FB Demi', sans-serif;
     }
 
     .page {
@@ -33,7 +36,7 @@
     .bg {
       position: fixed;
       inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80');
+      background-image: url('bg_red.jpg');
       background-size: cover;
       background-position: center;
       z-index: 0;
@@ -58,14 +61,13 @@
     .page-title {
       position: relative;
       z-index: 1;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Berlin Sans FB Demi', sans-serif;
       font-size: clamp(2rem, 8vw, 3.2rem);
       font-weight: 600;
       color: var(--text-cream);
       letter-spacing: 0.04em;
       text-align: center;
       margin-bottom: 2rem;
-      animation: fadeUp 0.8s ease both;
     }
 
     /* ── Content boxes ── */
@@ -77,19 +79,18 @@
       gap: 1rem;
       width: 100%;
       max-width: 560px;
-      animation: fadeUp 0.8s 0.1s ease both;
     }
 
     .box {
-      background: var(--brown-mid);
+      background: var(--brown);
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,0.1);
       padding: 1.2rem 1.4rem;
-      color: var(--text-light);
+      color: var(--text-cream);
     }
 
     .box h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Berlin Sans FB Demi', sans-serif;
       font-size: 1.2rem;
       font-weight: 600;
       letter-spacing: 0.05em;
@@ -101,11 +102,7 @@
       font-size: 0.95rem;
       font-weight: 300;
       line-height: 1.65;
-      color: rgba(245, 237, 228, 0.88);
-    }
-
-    .box.highlight {
-      background: var(--brown-dark);
+      color: var(--text-cream);
     }
 
     /* location list */
@@ -119,25 +116,12 @@
     .locations li {
       font-size: 0.95rem;
       font-weight: 300;
-      color: rgba(245, 237, 228, 0.88);
+      color: var(--text-cream);
       padding-left: 1.2rem;
       position: relative;
       line-height: 1.5;
     }
-    .locations li::before {
-      content: '◆';
-      position: absolute;
-      left: 0;
-      font-size: 0.5rem;
-      top: 0.35em;
-      color: var(--text-cream);
-      opacity: 0.6;
-    }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
