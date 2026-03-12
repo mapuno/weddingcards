@@ -18,12 +18,15 @@
       --text-cream:  #e8d5c0;
     }
 
-    html, body {
-      height: 100%;
-      font-family: 'Baloo', sans-serif;
-      font-weight: bold;
+    @font-face {
+      font-family: 'Berlin Sans FB Demi';
+      src: url('assets/fonts/BRLNSDB.TTF') format('truetype');
     }
 
+    html, body {
+      height: 100%;
+      font-family: 'Berlin Sans FB Demi', sans-serif;
+    }
     
     .page {
       min-height: 100dvh;
@@ -56,7 +59,7 @@
     }
 
     .title-block h1 {
-      font-family: 'Baloo', sans-serif;
+      font-family: 'Berlin Sans FB Demi', sans-serif;
       font-size: clamp(2.4rem, 9vw, 4rem);
       font-weight: 600;
       color: var(--text-cream);
@@ -87,8 +90,7 @@
       border: 1px solid rgba(255,255,255,0.12);
       background-color: var(--brown);
       color: var(--text-cream);
-      font-family: 'Baloo', sans-serif;
-      font-weight: bold;
+      font-family: 'Berlin Sans FB Demi', sans-serif;
       font-size: 1rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
