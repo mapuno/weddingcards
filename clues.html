@@ -12,6 +12,7 @@
     :root {
       --brown:  #8f5a3a;
       --text-cream:  #e8d5c0;
+      --text-subhead:  #601304;
     }
 
     @font-face {
@@ -40,6 +41,7 @@
       background-size: cover;
       background-position: center;
       z-index: 0;
+      overflow: hidden; /* add this line to prevent the background from moving when scrolling */
     }
 
     /* ── Back link ── */
@@ -95,12 +97,12 @@
       font-weight: 600;
       letter-spacing: 0.05em;
       margin-bottom: 0.5rem;
-      color: var(--text-cream);
+      color: var(--text-subhead);
     }
 
     .box p {
       font-size: 0.95rem;
-      font-weight: 300;
+      font-weight: 150;
       line-height: 1.65;
       color: var(--text-cream);
     }
