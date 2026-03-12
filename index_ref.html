@@ -14,20 +14,19 @@
     }
 
     :root {
-      --brown:  #8f5a3a;
-      --text-cream:  #e8d5c0;
-    }
-
-    @font-face {
-      font-family: 'Berlin Sans FB Demi';
-      src: url('BRLNSDB.TTF') format('truetype');
+      --brown-dark:   #3b2314;
+      --brown-mid:    #5c3520;
+      --brown-light:  #7a4a2e;
+      --brown-hover:  #8f5a3a;
+      --text-light:   #f5ede4;
+      --text-cream:   #e8d5c0;
     }
 
     html, body {
       height: 100%;
-      font-family: 'Berlin Sans FB Demi', sans-serif;
+      font-family: 'Jost', sans-serif;
     }
-    
+
     .page {
       min-height: 100dvh;
       display: flex;
@@ -43,23 +42,25 @@
     .bg {
       position: absolute;
       inset: 0;
-      background-image: url('bg_blue.jpg');
+      background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80');
       background-size: cover;
       background-position: center;
       z-index: 0;
     }
 
+
+
     /* ── Title ── */
     .title-block {
-      position: absolute;
-      top: 25%;
-      transform: translateY(-50%);
+      position: relative;
+      z-index: 1;
       text-align: center;
-      margin-top: 2.8rem;
+      margin-bottom: 2.8rem;
+      animation: fadeUp 0.9s ease both;
     }
 
     .title-block h1 {
-      font-family: 'Berlin Sans FB Demi', sans-serif;
+      font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.4rem, 9vw, 4rem);
       font-weight: 600;
       color: var(--text-cream);
@@ -68,23 +69,24 @@
     }
 
     .title-block p {
-      font-family: 'Berlin Sans FB Demi', sans-serif;
+      margin-top: 0.5rem;
       font-size: clamp(0.8rem, 3.5vw, 1rem);
       font-weight: 300;
-      color: var(--text-cream);
+      color: rgba(232, 213, 192, 0.75);
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
+
     /* ── Buttons ── */
     .nav-buttons {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      position: relative;
+      z-index: 1;
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
       width: 100%;
       max-width: 360px;
+      animation: fadeUp 0.9s 0.15s ease both;
     }
 
     .nav-btn {
@@ -95,21 +97,71 @@
       padding: 1rem 1.5rem;
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,0.12);
-      background-color: var(--brown);
-      color: var(--text-cream);
-      font-family: 'Berlin Sans FB Demi', sans-serif;
+      background: linear-gradient(135deg, var(--brown-mid) 0%, var(--brown-dark) 100%);
+      color: var(--text-light);
+      font-family: 'Jost', sans-serif;
       font-size: 1rem;
+      font-weight: 400;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
       position: relative;
       overflow: hidden;
+      transition: background 0.25s, transform 0.15s, box-shadow 0.25s;
 
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
     }
 
+    .nav-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--brown-hover) 0%, var(--brown-mid) 100%);
+      opacity: 0;
+      transition: opacity 0.25s;
+      border-radius: inherit;
+    }
+
+    .nav-btn:hover::before,
+    .nav-btn:focus-visible::before {
+      opacity: 1;
+    }
+
+    .nav-btn:active {
+      transform: scale(0.97);
+    }
+
+    .nav-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Tablet & up: centre more, slightly larger ── */
+    @media (min-width: 600px) {
+      .page {
+        justify-content: center;
+        padding-bottom: 0;
+        gap: 3rem;
+      }
+      .title-block {
+        margin-bottom: 0;
+      }
+      .nav-buttons {
+        max-width: 400px;
+      }
+      .nav-btn {
+        padding: 1.1rem 2rem;
+        font-size: 1.05rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -118,8 +170,8 @@
   <div class="bg"></div>
 
   <div class="title-block">
-    <h1>Shanna and Ryan Trading Cards</h1>
-    <p>Find all 12 cards!</p>
+    <h1>Wedding Cards</h1>
+    <p>A game for our guests</p>
   </div>
 
   <nav class="nav-buttons">
