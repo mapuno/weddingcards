@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clues — Wedding Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown-dark:  #3b2314;
+      --brown-mid:   #5c3520;
+      --text-light:  #f5ede4;
+      --text-cream:  #e8d5c0;
+    }
+
+    html, body {
+      min-height: 100%;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .page {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.5rem 3.5rem;
+      position: relative;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    /* ── Back link ── */
+    .back {
+      position: relative;
+      z-index: 1;
+      align-self: flex-start;
+      color: var(--text-cream);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0.8;
+    }
+    .back:hover { opacity: 1; }
+
+    /* ── Page title ── */
+    .page-title {
+      position: relative;
+      z-index: 1;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 8vw, 3.2rem);
+      font-weight: 600;
+      color: var(--text-cream);
+      letter-spacing: 0.04em;
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    /* ── Content boxes ── */
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 560px;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
+    .box {
+      background: var(--brown-mid);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 1.2rem 1.4rem;
+      color: var(--text-light);
+    }
+
+    .box h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      color: var(--text-cream);
+    }
+
+    .box p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.65;
+      color: rgba(245, 237, 228, 0.88);
+    }
+
+    .box.highlight {
+      background: var(--brown-dark);
+    }
+
+    /* location list */
+    .locations {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+    .locations li {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(245, 237, 228, 0.88);
+      padding-left: 1.2rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    .locations li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      font-size: 0.5rem;
+      top: 0.35em;
+      color: var(--text-cream);
+      opacity: 0.6;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<main class="page">
+  <div class="bg"></div>
+
+  <a href="index.html" class="back">← Back</a>
+
+  <h1 class="page-title">Clues</h1>
+
+  <div class="content">
+
+    <div class="box highlight">
+      <h2>Your Cards</h2>
+      <p>You've been given 5 cards at your seat. Each card is double-sided — one side is <strong>red</strong>, one side is <strong>blue</strong>. This is how you track which cards belong to you. Each card has 4 numbers, one on each corner, that always add up to 16.</p>
+    </div>
+
+    <div class="box">
+      <h2>Finding More Cards</h2>
+      <p>There are 3 additional locations around the venue where cards have been hidden. Seek them out if you want to build your hand.</p>
+      <ul class="locations">
+        <li>Location one — add a clue here</li>
+        <li>Location two — add a clue here</li>
+        <li>Location three — add a clue here</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Trading</h2>
+      <p>Find other guests and trade cards to complete sets, gain an advantage, or simply collect. Keep your side face-up to show ownership — flip to the other colour when you win a card from someone.</p>
+    </div>
+
+  </div>
+</main>
+</body>
+</html>
