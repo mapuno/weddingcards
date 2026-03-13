@@ -107,92 +107,6 @@
 
     .box p + p { margin-top: 0.6rem; }
 
-    /* ── Card diagram ── */
-    /* .card-diagram {
-      display: flex;
-      justify-content: center;
-      margin: 1rem 0 0.4rem;
-    }
-
-    .card {
-      width: 80px;
-      height: 110px;
-      border-radius: 8px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      padding: 8px;
-      position: relative;
-    }
-    .card.blue { background: var(--blue-card); border: 2px solid rgba(255,255,255,0.25); }
-    .card.red  { background: var(--red-card);  border: 2px solid rgba(255,255,255,0.25); }
-
-    .card-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-cream);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute; 
-    }
-
-    .card-num.top    { align-items: flex-start; justify-content: center; }
-    .card-num.right  { align-items: center; justify-content: flex-end; }
-    .card-num.bottom { align-items: flex-end; justify-content: center; }
-    .card-num.left   { align-items: center; justify-content: flex-start; }
-
-    .card-label {
-      text-align: center;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-cream);
-      margin-top: 0.4rem;
-    }
-
-    .two-cards {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      align-items: flex-start;
-    }
-    .card-wrap { display: flex; flex-direction: column; align-items: center; } */
-
-    /* ── Grid diagram ── */
-    .grid-diagram {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      max-width: 240px;
-      margin: 1rem auto 0.4rem;
-    }
-
-    .grid-cell {
-      aspect-ratio: 3/4;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.85);
-      border: 1px solid rgba(255,255,255,0.15);
-    }
-    .grid-cell.empty { background: rgba(255,255,255,0.08); }
-    .grid-cell.blue  { background: var(--blue-card); }
-    .grid-cell.red   { background: var(--red-card); }
-
-    .grid-caption {
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--text-cream);
-      margin-top: 0.3rem;
-      font-style: italic
-    }
-
     /* ── Steps ── */
     .steps {
       display: flex;
@@ -239,27 +153,7 @@
     <div class="box highlight">
       <h2>Your Cards</h2>
       <p>Each card is double-sided. One side is <strong>blue</strong>, one side is <strong>red</strong> to track ownership. Each card has 4 numbers that add up to 16.</p>
-      <img src="Cards ex.png" alt="Cards" width="240" height="130" style="display: block; margin: auto;">
-      <!-- <div class="two-cards">
-        <div class="card-wrap">
-          <div class="card blue">
-            <span class="card-num top-left">5</span>
-            <span class="card-num top-right">3</span>
-            <span class="card-num bottom-left">4</span>
-            <span class="card-num bottom-right">4</span>
-          </div>
-          <div class="card-label">Blue side</div>
-        </div>
-        <div class="card-wrap">
-          <div class="card red">
-            <span class="card-num top-left">5</span>
-            <span class="card-num top-right">3</span>
-            <span class="card-num bottom-left">4</span>
-            <span class="card-num bottom-right">4</span>
-          </div>
-          <div class="card-label">Red side</div>
-        </div>
-      </div> -->
+      <img src="Your Cards.png" alt="Cards" width="240" height="130" style="display: block; margin: auto;">
     </div>
 
     <!-- Tic Tac Toe -->
@@ -280,25 +174,12 @@
       <div class="steps">
         <div class="step"><div class="step-num">1</div><p>Draw a 3×3 grid. Decide who goes first.</p></div>
         <div class="step"><div class="step-num">2</div><p>On your turn, place one card in any empty cell, face-up in your colour.</p></div>
+        <img src="Card Battle Step 2.png" alt="Cards" width="240" height="300" style="display: block; margin: auto;">
         <div class="step"><div class="step-num">3</div><p>Compare numbers with any adjacent cards — the number on the edge touching the neighbouring card is what counts. If your number is <strong>higher</strong>, flip that card to your colour. It's now yours.</p></div>
+        <img src="Card Battle Step 3.png" alt="Cards" width="240" height="300" style="display: block; margin: auto;">
         <div class="step"><div class="step-num">4</div><p>Flipped cards can be flipped again on future turns. Play continues until all 9 cells are filled.</p></div>
         <div class="step"><div class="step-num">5</div><p>Count the cards in your colour on the board to determine the winner. </p></div>
       </div>
-
-      <!-- Example grid -->
-      <div class="grid-diagram">
-        <div class="grid-cell blue">5·3<br>4·4</div>
-        <div class="grid-cell red">2·6<br>5·3</div>
-        <div class="grid-cell empty"></div>
-        <div class="grid-cell empty"></div>
-        <div class="grid-cell blue">4·4<br>3·5</div>
-        <div class="grid-cell empty"></div>
-        <div class="grid-cell red">6·2<br>4·4</div>
-        <div class="grid-cell empty"></div>
-        <div class="grid-cell empty"></div>
-      </div>
-      <p class="grid-caption">An example mid-game board — edges touching each other are compared</p>
-    </div>
 
   </div>
 </main>
