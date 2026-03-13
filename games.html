@@ -10,17 +10,21 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --brown-dark:  #3b2314;
-      --brown-mid:   #5c3520;
-      --text-light:  #f5ede4;
+      --brown:  #8f5a3a;
       --text-cream:  #e8d5c0;
+      --text-subhead:  #601304;
       --blue-card:   #2a5298;
       --red-card:    #9e2020;
     }
 
+    @font-face {
+      font-family: 'Berlin Sans FB Demi';
+      src: url('BRLNSDB.TTF') format('truetype');
+    }
+
     html, body {
       min-height: 100%;
-      font-family: 'Jost', sans-serif;
+      font-family: 'Berlin Sans FB Demi', sans-serif;
     }
 
     .page {
@@ -58,14 +62,13 @@
     .page-title {
       position: relative;
       z-index: 1;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Berlin Sans FB Demi', sans-serif;
       font-size: clamp(2rem, 8vw, 3.2rem);
       font-weight: 600;
       color: var(--text-cream);
       letter-spacing: 0.04em;
       text-align: center;
       margin-bottom: 2rem;
-      animation: fadeUp 0.8s ease both;
     }
 
     .content {
@@ -84,25 +87,23 @@
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,0.1);
       padding: 1.2rem 1.4rem;
-      color: var(--text-light);
+      color: var(--text-cream);
     }
 
-    .box.highlight { background: var(--brown-dark); }
-
     .box h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Berlin Sans FB Demi', sans-serif;
       font-size: 1.25rem;
       font-weight: 600;
       letter-spacing: 0.05em;
       margin-bottom: 0.6rem;
-      color: var(--text-cream);
+      color: var(--text-subhead);
     }
 
     .box p {
       font-size: 0.95rem;
       font-weight: 300;
       line-height: 1.65;
-      color: rgba(245, 237, 228, 0.88);
+      color: var(--text-cream);
     }
 
     .box p + p { margin-top: 0.6rem; }
@@ -131,22 +132,24 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1rem;
       font-weight: 600;
-      color: rgba(255,255,255,0.9);
+      color: var(--text-subhead);
       display: flex;
       align-items: center;
       justify-content: center;
+      position: absolute;
     }
-    .card-num.top-left     { align-items: flex-start; justify-content: flex-start; }
-    .card-num.top-right    { align-items: flex-start; justify-content: flex-end; }
-    .card-num.bottom-left  { align-items: flex-end;   justify-content: flex-start; }
-    .card-num.bottom-right { align-items: flex-end;   justify-content: flex-end; }
+
+    .card-num.top     { top: 0; left: 50%; transform: translateX(-50%); }
+    .card-num.right { right: 0; top: 50%; transform: translateY(-50%); }
+    .card-num.bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
+    .card-num.left { left: 0; top: 50%; transform: translateY(-50%); }
 
     .card-label {
       text-align: center;
       font-size: 0.75rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(245,237,228,0.6);
+      color: var(--text-cream);
       margin-top: 0.4rem;
     }
 
@@ -186,9 +189,9 @@
     .grid-caption {
       text-align: center;
       font-size: 0.78rem;
-      color: rgba(245,237,228,0.55);
+      color: var(--text-cream);
       margin-top: 0.3rem;
-      font-style: italic;
+      font-style: italic
     }
 
     /* ── Steps ── */
@@ -221,10 +224,6 @@
       margin: 0;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
@@ -240,7 +239,7 @@
     <!-- About the cards -->
     <div class="box highlight">
       <h2>Your Cards</h2>
-      <p>Each card is double-sided with no backing. One side is <strong>blue</strong>, one side is <strong>red</strong> — this tracks ownership. Each card has 4 numbers, one in each corner, that always add up to 16.</p>
+      <p>Each card is double-sided. One side is <strong>blue</strong>, one side is <strong>red</strong> — this tracks ownership. Each card has 4 numbers that add up to 16.</p>
 
       <div class="two-cards">
         <div class="card-wrap">
@@ -267,26 +266,22 @@
     <!-- Tic Tac Toe -->
     <div class="box">
       <h2>Tic Tac Toe</h2>
-      <p>A quick game for two players using the colours on your cards.</p>
       <div class="steps">
         <div class="step"><div class="step-num">1</div><p>One player is Red, one is Blue. Each picks 5 cards to play with.</p></div>
         <div class="step"><div class="step-num">2</div><p>Take turns placing one card face-up in your colour on a 3×3 grid.</p></div>
         <div class="step"><div class="step-num">3</div><p>First to get three of their colour in a row — horizontal, vertical, or diagonal — wins.</p></div>
-        <div class="step"><div class="step-num">4</div><p>Winner keeps all 9 cards on the board, flipped to their colour.</p></div>
       </div>
     </div>
 
     <!-- Card Battle -->
     <div class="box">
       <h2>Card Battle</h2>
-      <p>A deeper game inspired by Triple Triad. Two players, 5 cards each.</p>
-
       <div class="steps">
         <div class="step"><div class="step-num">1</div><p>Draw a 3×3 grid. Decide who goes first.</p></div>
         <div class="step"><div class="step-num">2</div><p>On your turn, place one card in any empty cell, face-up in your colour.</p></div>
         <div class="step"><div class="step-num">3</div><p>Compare numbers with any adjacent cards — the number on the edge touching the neighbouring card is what counts. If your number is <strong>higher</strong>, flip that card to your colour. It's now yours.</p></div>
         <div class="step"><div class="step-num">4</div><p>Flipped cards can be flipped again on future turns. Play continues until all 9 cells are filled.</p></div>
-        <div class="step"><div class="step-num">5</div><p>Count the cards in your colour on the board — whoever has more wins. The winner keeps all 9 cards.</p></div>
+        <div class="step"><div class="step-num">5</div><p>Count the cards in your colour on the board — whoever has more wins. </p></div>
       </div>
 
       <!-- Example grid -->
@@ -302,12 +297,6 @@
         <div class="grid-cell empty"></div>
       </div>
       <p class="grid-caption">An example mid-game board — edges touching each other are compared</p>
-    </div>
-
-    <!-- Tip -->
-    <div class="box highlight">
-      <h2>Tip</h2>
-      <p>Numbers on a card are read clockwise from the top-left: top, right, bottom, left. When two cards sit side by side, the <strong>right edge</strong> of the left card battles the <strong>left edge</strong> of the right card. When stacked vertically, the <strong>bottom edge</strong> battles the <strong>top edge</strong> below.</p>
     </div>
 
   </div>
